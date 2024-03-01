@@ -23,11 +23,11 @@ const Home = () => {
 
   useEffect(() => {
     dispatch(getBlogsAction());
-    socket.on('add-like', newPosts => {
-      setAllBlogs(newPosts);
+    socket.on('add-like', newBlogs => {
+      setAllBlogs(newBlogs);
     });
-    socket.on('remove-like', newPosts => {
-      setAllBlogs(newPosts);
+    socket.on('remove-like', newBlogs => {
+      setAllBlogs(newBlogs);
     });
     //eslint-disable-next-line
   }, []);
