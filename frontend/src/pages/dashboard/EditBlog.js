@@ -12,9 +12,9 @@ import {
 
 const validationSchema = yup.object({
   title: yup
-    .string('Add a post title')
+    .string('Add a blog title')
     .min(4, 'text content should havea minimum of 4 characters ')
-    .required('Post title is required'),
+    .required('Blog title is required'),
   content: yup
     .string('Add text content')
     .min(10, 'text content should havea minimum of 10 characters ')
@@ -47,12 +47,12 @@ const EditBlog = ({ id, onClose }) => {
     validationSchema: validationSchema,
     enableReinitialize: true,
     onSubmit: (values, actions) => {
-      updatePost(values);
+      updateBlog(values);
       actions.resetForm();
     }
   });
 
-  const updatePost = async values => {
+  const updateBlog = async values => {
     dispatch(editBlogAction(id, values));
     onClose();
   };
@@ -77,12 +77,12 @@ const EditBlog = ({ id, onClose }) => {
           sx={{ mb: 3 }}
           fullWidth
           id="title"
-          label="Post title"
+          label="Blog title"
           name="title"
           InputLabelProps={{
             shrink: true
           }}
-          placeholder="Post title"
+          placeholder="Blog title"
           value={values.title}
           onChange={handleChange}
           onBlur={handleBlur}

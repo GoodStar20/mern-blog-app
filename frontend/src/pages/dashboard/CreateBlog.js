@@ -8,9 +8,9 @@ import { createBlogAction } from '../../redux/actions/blogAction';
 
 const validationSchema = yup.object({
   title: yup
-    .string('Add a post title')
+    .string('Add a blog title')
     .min(4, 'text content should havea minimum of 4 characters ')
-    .required('Post title is required'),
+    .required('Blog title is required'),
   content: yup
     .string('Add text content')
     .min(10, 'text content should havea minimum of 10 characters ')
@@ -36,12 +36,12 @@ const CreateBlog = ({ onClose }) => {
 
     validationSchema: validationSchema,
     onSubmit: (values, actions) => {
-      createNewPost(values);
+      createNewBlog(values);
       actions.resetForm();
     }
   });
 
-  const createNewPost = async values => {
+  const createNewBlog = async values => {
     dispatch(createBlogAction(values));
     onClose();
   };

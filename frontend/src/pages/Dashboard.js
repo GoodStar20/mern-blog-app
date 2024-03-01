@@ -73,7 +73,7 @@ const Dashboard = () => {
           </IconButton>
           <IconButton
             aria-label="delete"
-            onClick={e => deletePostById(e, value.row._id)}>
+            onClick={e => deleteBlogById(e, value.row._id)}>
             <DeleteIcon sx={{ color: 'red' }} />
           </IconButton>
         </Box>
@@ -97,8 +97,8 @@ const Dashboard = () => {
     setIsOpen(true);
   };
 
-  const deletePostById = async (e, id) => {
-    if (window.confirm('Are you sure you want to delete this post?')) {
+  const deleteBlogById = async (e, id) => {
+    if (window.confirm('Are you sure you want to delete this blog?')) {
       dispatch(deleteBlogAction(id));
     }
   };
