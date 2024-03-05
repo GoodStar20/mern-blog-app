@@ -12,7 +12,7 @@ const initialState = {
   singleBlog: null
 };
 
-export default (state = initialState, action) => {
+const blogReducer = (state = initialState, action) => {
   switch (action.type) {
     case BLOGS_LOAD_REQUEST:
       return { ...state, loading: true };
@@ -28,3 +28,4 @@ export default (state = initialState, action) => {
       return state;
   }
 };
+export default blogReducer;
