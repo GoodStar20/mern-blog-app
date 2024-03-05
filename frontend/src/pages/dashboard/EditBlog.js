@@ -61,7 +61,7 @@ const EditBlog = ({ id, onClose }) => {
     if (singleBlog) {
       setTitle(singleBlog.title);
       setContent(singleBlog.content);
-      setImagePreview(singleBlog.image?.url);
+      setImagePreview(singleBlog.image);
     }
   }, [singleBlog]);
 
@@ -158,7 +158,7 @@ const EditBlog = ({ id, onClose }) => {
                       }}>
                       <Box>
                         <img
-                          style={{ maxWidth: '100px' }}
+                          style={{ maxWidth: '300px' }}
                           src={
                             values.image === '' ? imagePreview : values.image
                           }

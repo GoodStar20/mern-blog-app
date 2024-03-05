@@ -22,15 +22,14 @@ const Dashboard = () => {
     {
       field: 'title',
       headerName: 'Blog title',
-      width: 150
+      flex: 1
     },
-
     {
       field: 'image',
       headerName: 'Image',
       flex: 1,
       renderCell: params => (
-        <img width="40%" src={params.row.image?.url} alt="field" />
+        <img width="60%" src={params.row.image} alt="field" />
       )
     },
     {
@@ -137,9 +136,6 @@ const Dashboard = () => {
             }}
             rows={blogs}
             columns={columns}
-            pageSize={3}
-            rowsPerPageOptions={[3]}
-            checkboxSelection
           />
         </Box>
       </Paper>

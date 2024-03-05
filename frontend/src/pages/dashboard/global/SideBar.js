@@ -52,7 +52,6 @@ const SideBar = () => {
                   color: '#1976d2'
                 }
               },
-
               icon: {
                 [`&.${menuClasses.icon}`]: {
                   color: '#1976d2'
@@ -60,7 +59,7 @@ const SideBar = () => {
               }
             }}>
             <MenuItem
-              component={<Link to="/admin/dashboard" />}
+              component={<Link to="/dashboard" />}
               icon={<DashboardIcon />}>
               Dashboard
             </MenuItem>
@@ -73,13 +72,11 @@ const SideBar = () => {
                 [`&.${menuClasses.button}`]: {
                   color: '#000'
                 },
-
                 '&:hover': {
                   backgroundColor: '#fafafa',
                   color: '#1976d2'
                 }
               },
-
               icon: {
                 [`&.${menuClasses.icon}`]: {
                   color: '#1976d2'

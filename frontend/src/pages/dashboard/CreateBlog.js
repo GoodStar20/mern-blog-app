@@ -72,6 +72,7 @@ const CreateBlog = ({ onClose }) => {
             multiline
             maxRows={5}
             minRows={3}
+            value={values.content}
             fullWidth
             placeholder={'Write the blog content...'}
             onChange={e => setFieldValue('content', e.target.value)}
@@ -124,22 +125,18 @@ const CreateBlog = ({ onClose }) => {
                     </p>
                   </>
                 ) : (
-                  <>
-                    <Box
-                      sx={{
-                        display: 'flex',
-                        justifyContent: 'space-around',
-                        alignItems: 'center'
-                      }}>
-                      <Box>
-                        <img
-                          style={{ maxWidth: '100px' }}
-                          src={values.image}
-                          alt=""
-                        />
-                      </Box>
-                    </Box>
-                  </>
+                  <Box
+                    sx={{
+                      display: 'flex',
+                      justifyContent: 'space-around',
+                      alignItems: 'center'
+                    }}>
+                    <img
+                      style={{ maxWidth: '300px' }}
+                      src={values.image}
+                      alt=""
+                    />
+                  </Box>
                 )}
               </Box>
             )}
