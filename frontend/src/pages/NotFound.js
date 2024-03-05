@@ -1,10 +1,10 @@
-import React from 'react';
+import { Box, Typography } from '@mui/material';
 
 const NotFound = () => {
   return (
-    <>
-      <h2>Not Found</h2>
-    </>
+    <Box sx={{ textAlign: 'center', width: '100%' }}>
+      <Typography variant="h6">Not Found</Typography>
+    </Box>
   );
 };
 

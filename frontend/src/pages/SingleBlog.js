@@ -58,7 +58,7 @@ const SingleBlog = () => {
     if (singleBlog) {
       setTitle(singleBlog.title);
       setContent(singleBlog.content);
-      setImage(singleBlog.image?.url || defaultImage);
+      setImage(singleBlog.image || defaultImage);
       setCreatedAt(singleBlog.createdAt);
       setComments(singleBlog.comments);
       setPosterName(singleBlog.postedBy.name);
@@ -91,14 +91,14 @@ const SingleBlog = () => {
         </IconButton>
         <CardHeader
           avatar={
-            <Avatar sx={{ bgcolor: 'red' }} aria-label="recipe">
+            <Avatar sx={{ bgcolor: 'green' }} aria-label="recipe">
               {getFirstChar(posterName)}
             </Avatar>
           }
           title={title}
           subheader={moment(createdAt).format('MMMM DD, YYYY')}
         />
-        <CardMedia component="img" height="250" image={image} alt={title} />
+        <CardMedia component="img" height="300" image={image} alt={title} />
         <CardContent>
           <Typography variant="body2">{content}</Typography>
           {comments.length > 0 && (
