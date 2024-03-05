@@ -45,7 +45,7 @@ const BlogCard = ({
     <Card sx={{ maxWidth: 345 }}>
       <CardHeader
         avatar={
-          <Avatar sx={{ bgcolor: 'red' }} aria-label="recipe">
+          <Avatar sx={{ bgcolor: 'green' }} aria-label="recipe">
             {getFirstChar(posterName)}
           </Avatar>
         }
@@ -61,8 +61,13 @@ const BlogCard = ({
         />
       </Link>
       <CardContent>
-        <Typography variant="body2" color="text.secondary">
-          {content.split(' ').slice(0, 10).join(' ') + '...'}
+        <Typography
+          variant="body2"
+          color="text.secondary"
+          overflow={'hidden'}
+          whiteSpace={'nowrap'}
+          textOverflow={'ellipsis'}>
+          {content}
         </Typography>
       </CardContent>
       <CardActions>

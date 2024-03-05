@@ -11,7 +11,7 @@ import {
   Menu,
   MenuItem
 } from '@mui/material';
-import HouseIcon from '@mui/icons-material/House';
+import ArticleIcon from '@mui/icons-material/Article';
 
 import { userLogoutAction } from '../redux/actions/userAction';
 
@@ -51,7 +51,7 @@ const Navbar = () => {
               color: 'white',
               textDecoration: 'none'
             }}>
-            <HouseIcon sx={{ display: { xs: 'flex' }, mr: 1 }} />
+            <ArticleIcon sx={{ display: { xs: 'flex' }, mr: 1 }} />
             <Typography variant="h6">BLOG</Typography>
           </Link>
           <Box sx={{ flex: 1, display: 'flex', justifyContent: 'end' }}>
@@ -96,17 +96,13 @@ const Navbar = () => {
                   onClose={handleCloseUserMenu}>
                   <MenuItem onClick={handleCloseUserMenu}>
                     <Typography textAlign="center">
-                      <Link
-                        style={{ textDecoration: 'none' }}
-                        to="/admin/dashboard">
+                      <Link style={{ textDecoration: 'none' }} to="/dashboard">
                         Dashboard
                       </Link>
                     </Typography>
                   </MenuItem>
                   <MenuItem onClick={logOutUser}>
-                    <Typography textAlign="center" color="#8e67b2">
-                      Log Out
-                    </Typography>
+                    <Typography textAlign="center">Log Out</Typography>
                   </MenuItem>
                 </Menu>
               </Box>
