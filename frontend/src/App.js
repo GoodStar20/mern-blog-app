@@ -2,7 +2,6 @@ import { Provider } from 'react-redux';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { ToastContainer } from 'react-toastify';
 import store from './redux/store';
-import { ProSidebarProvider } from 'react-pro-sidebar';
 
 import Home from './pages/Home';
 import LogIn from './pages/LogIn';
@@ -25,24 +24,22 @@ const App = () => {
       <ToastContainer />
       <Provider store={store}>
         <BrowserRouter>
-          <ProSidebarProvider>
-            <Navbar />
-            <Routes>
-              <Route path="/" element={<Home />} />
-              <Route path="/login" element={<LogIn />} />
-              <Route path="/register" element={<Register />} />
-              <Route path="/blog/:id" element={<SingleBlog />} />
-              <Route path="*" element={<NotFound />} />
-              <Route
-                path="/admin/dashboard"
-                element={
-                  <ProtectedRoute>
-                    <DashboardHOC />
-                  </ProtectedRoute>
-                }
-              />
-            </Routes>
-          </ProSidebarProvider>
+          <Navbar />
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/login" element={<LogIn />} />
+            <Route path="/register" element={<Register />} />
+            <Route path="/blog/:id" element={<SingleBlog />} />
+            <Route path="*" element={<NotFound />} />
+            <Route
+              path="/dashboard"
+              element={
+                <ProtectedRoute>
+                  <DashboardHOC />
+                </ProtectedRoute>
+              }
+            />
+          </Routes>
         </BrowserRouter>
       </Provider>
     </>
