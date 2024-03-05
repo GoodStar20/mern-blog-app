@@ -84,6 +84,7 @@ export const userProfileAction = () => async dispatch => {
       payload: data
     });
   } catch (error) {
+    localStorage.removeItem('userInfo');
     dispatch({
       type: USER_LOAD_FAIL,
       payload: error.response.data.error
