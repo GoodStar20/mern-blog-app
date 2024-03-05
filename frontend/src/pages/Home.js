@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import moment from 'moment';
 import { io } from 'socket.io-client';
-import { Box, Container, Grid } from '@mui/material';
+import { Box, Container, Grid, Typography } from '@mui/material';
 
 import BlogCard from '../components/BlogCard';
 import Loader from '../components/Loader';
@@ -41,9 +41,7 @@ const Home = () => {
           columns={{ xs: 4, sm: 8, md: 12 }}>
           {loading ? (
             <Loader />
-          ) : (
-            allBlogs &&
-            allBlogs.length > 0 &&
+          ) : allBlogs && allBlogs.length > 0 ? (
             allBlogs.map((blog, index) => (
               <Grid item xs={2} sm={4} md={4} key={index}>
                 <BlogCard
@@ -51,7 +49,7 @@ const Home = () => {
                   title={blog.title}
                   content={blog.content}
                   posterName={blog.postedBy.name}
-                  image={blog.image ? blog.image.url : ''}
+                  image={blog.image || ''}
                   subheader={moment(blog.createdAt).format('MMMM DD, YYYY')}
                   comments={blog.comments.length}
                   likes={blog.likes.length}
@@ -59,6 +57,10 @@ const Home = () => {
                 />
               </Grid>
             ))
+          ) : (
+            <Box sx={{ textAlign: 'center', width: '100%' }}>
+              <Typography variant="h6">There are no blogs.</Typography>
+            </Box>
           )}
         </Grid>
       </Box>

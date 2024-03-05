@@ -38,7 +38,7 @@ const LogIn = () => {
 
   useEffect(() => {
     if (isAuthenticated) {
-      navigate('/admin/dashboard');
+      navigate('/dashboard');
     }
   }, [isAuthenticated, navigate]);
 
@@ -71,7 +71,7 @@ const LogIn = () => {
               '& .MuiInputBase-root': {
                 color: 'text.secondary'
               },
-              fieldset: { borderColor: 'rgb(231, 235, 240)' }
+              fieldset: { borderColor: '#e7ebf0' }
             }}
             fullWidth
             id="email"
@@ -93,7 +93,7 @@ const LogIn = () => {
               '& .MuiInputBase-root': {
                 color: 'text.secondary'
               },
-              fieldset: { borderColor: 'rgb(231, 235, 240)' }
+              fieldset: { borderColor: '#e7ebf0' }
             }}
             fullWidth
             id="password"
